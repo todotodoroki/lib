@@ -1,14 +1,14 @@
 import queue
 
 class BFS():
-    def __init__(self, H, W, sy, sx,Graph): #グラフは頂点とつながっている辺にいての2次元
+    def __init__(self, H, W, sy, sx,Graph):
         self.dist = [[-1]*W for i in range(H)] #-1は未訪問
         self.que = queue.Queue()
         self.Graph = Graph
         self.sy = sy-1
         self.sx = sx-1
 
-    def bfs(self, start):
+    def bfs(self):
         dx = [1, 0, -1, 0]
         dy = [0, 1, 0, -1]
         self.dist[self.sy][self.sx] = 0
@@ -50,7 +50,7 @@ for i in range(H):
 #print(meiro)
 
 bfs = BFS(H, W, sy, sx, meiro)
-dist = bfs.bfs(0)
+dist = bfs.bfs()
 """
 for i in range(H):
     print("{},{}".format(i,dist[i]))
