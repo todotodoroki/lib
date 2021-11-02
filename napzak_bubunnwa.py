@@ -11,8 +11,8 @@ for i in range(N):
             dp[i+1][m] = dp[i][m] or dp[i][m-A[i]]
         else:
             dp[i+1][m] = dp[i][m]
-"""
+
 for i in range(N):
-    print(dp[i])
-"""
+    print(dp[i][M])
+
 print("Yes" if dp[N][M] else "No")
